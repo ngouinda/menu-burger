@@ -1,0 +1,117 @@
+/* font */
+
+
+
+/* variables */
+:root{
+    --font-size: 1rem;
+}
+
+/* reset */
+*{
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+
+/* Basic style */
+
+body{
+    
+    font-size: var(--font-size);
+    font-family:sans-serif;
+}
+.main-content{
+    padding: 1rem;
+}
+
+/* Navbar */
+.navbar{
+    display: flex;
+    align-items:center ;
+    justify-content: space-between;
+    padding: 10px;
+    height: 55px;
+    color:white;
+    background-color: black;
+}
+.navbar__links{
+    display:flex;  
+}
+.navbar__link{
+    padding: 0 10px;
+}
+.navbar__links a{
+    color: white;
+    text-decoration: none;
+}
+.burger{display: none;}
+/* mediaquery */
+@media screen and (max-width:768px){
+    .navbar__links{
+        display: flex;
+        flex-direction: column;
+        width:0;
+        height:calc(100vh - 55px);
+        position: absolute;
+        top: 55px;
+        right: 0;
+        background:rgb(71, 67, 67) ;
+        transition: all .5s ease-in-out;
+    }
+    .show-nav .navbar__links{
+        width: 100%;
+    }
+    .navbar__links a{
+        display: block;
+        padding: 0.2rem;
+        font-size: 1.2rem;
+    }
+/* burger */
+
+    .burger{
+        display: block;
+        position: relative;
+        padding: 0;
+        width: 45px;
+        height: 45px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+
+    }
+    .bar{
+        display: block;
+        width: 45px;
+        height: 4px;
+        background-color: white;
+        border-radius: 3px;
+    }
+    .bar::before, .bar::after{
+        content: "";
+        display: block;
+        width: 45px;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        background-color: white;
+        border-radius: 3px;
+        transition: all .5s ;
+
+    }
+    .bar::before{
+        transform: translateY(-12px);
+    }
+    .bar::after{
+        transform: translateY(12px);
+    }
+}
+
+
+/* toglle menu */
+
+
